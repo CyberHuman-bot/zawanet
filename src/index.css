@@ -1,0 +1,145 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* only center horizontally */
+  align-items: flex-start; /* keep content near top */
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+  max-width: 600px;
+}
+
+.logo-container {
+  align-self: flex-end; /* pushes logo to the right edge of app-container */
+  margin-bottom: 20px;
+}
+
+.card {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  background-color: #1a1a1a;
+  width: fit-content;
+  text-align: center;
+  transition: border-color 0.25s;
+}
+button {
+  position: relative;
+  background-color: #d9572c;
+  color: white;
+  border: none;
+  border-radius: 150px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden; /* clip pseudo-element */
+  transition: color 0.4s ease-in-out, border 0.2s ease-in-out;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  border-radius: 150px;
+  z-index: 0;
+  transition: width 0.4s ease-in-out;
+}
+
+button span {
+  position: relative;
+  z-index: 1; /* ensures text is above the pseudo-element */
+  transition: color 0.4s ease-in-out;
+}
+
+button:hover::before {
+  width: 100%;
+}
+
+button:hover span {
+  color: #d9572c; /* text color flips when background fills */
+}
+
+button:active {
+  transform: scale(0.98);
+}
+.a-button {
+  position: relative;
+  display: inline-flex;           /* allows icon + text */
+  align-items: center;
+  gap: 8px;                       /* space between icon and text */
+  justify-content: center;
+  background-color: #d9572c;
+  color: white;
+  border: none;
+  border-radius: 150px;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out, border 0.2s ease-in-out;
+}
+
+.a-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: white;
+  border-radius: 150px;
+  z-index: 0;
+  transition: width 0.4s ease-in-out;
+}
+
+.a-button span, 
+.a-button svg {      /* text and icon on top */
+  position: relative;
+  z-index: 1;
+  transition: color 0.4s ease-in-out;
+}
+
+.a-button:hover::before {
+  width: 100%;
+}
+
+.a-button:hover span, 
+.a-button:hover svg ,
+.a-button:hover a{
+  color: #d9572c;
+}
+
+.a-button:active {
+  transform: scale(0.98);
+}
